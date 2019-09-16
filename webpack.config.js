@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -42,16 +44,21 @@ module.exports = {
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
     path: path.resolve(__dirname, 'dist/'), 
-    publicPath: '/dist/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   devServer: {
     contentBase: path.join(__dirname, 'public/'),
     port: 3001, 
-    publicPath: "http://localhost:3001/dist/",
+    publicPath: "http://localhost:3001/",
+    historyApiFallback: true,
     hotOnly: true
   },
   plugins: [
+    new Dotenv(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
     }), 
