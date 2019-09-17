@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { hot } from 'react-hot-loader';
-import { BrowserRouter, Switch, Router, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Search from '../Search/Search';
 import WordDetail from '../WordDetail/WordDetail';
@@ -12,10 +12,10 @@ class App extends Component{
     return(
       <BrowserRouter>
         <Switch>
-          <div className="App">
+          <React.Fragment>
             <Route exact path='/' component={Search} />
-            <Route path='/word' component={WordDetail} />
-          </div>
+            <Route exact path='/lexicon/:language/:word' component={WordDetail} />
+          </React.Fragment>
         </Switch>
       </BrowserRouter> 
     );

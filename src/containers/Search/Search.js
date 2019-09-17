@@ -1,7 +1,6 @@
 import React from 'react';
 
 import SearchBar from '../../components/SearchBar/SearchBar';
-import WordInfo from '../../components/WordInfo/WordInfo';
 
 function Search (props) {
 
@@ -12,7 +11,6 @@ function Search (props) {
   return (
     <div>
       <SearchBar onSearch={search} />
-      <WordInfo />
     </div>
   )
 }

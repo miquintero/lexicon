@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import WordInfo from '../../components/WordInfo/WordInfo';
 
-export class WordDetail extends Component {
-  render() {
-    return (
-      <div>
-        <WordInfo />
-      </div>
-    )
-  }
-}
+function WordDetail ({ match }) {
+
+  const {
+    params: { language, word }
+  } = match;
+
+  return (
+    <div>
+      <WordInfo language={language} word={word}/>
+    </div>
+  )
+};
 
 export default WordDetail;

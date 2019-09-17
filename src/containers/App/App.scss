@@ -1,0 +1,18 @@
+html {
+  background-color: #efefef;
+  margin: 0; 
+  padding: 5vw;
+  line-height: 1.15;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+@media screen and (max-width: 992px) {
+  .s003 form input {
+    height: 50px;
+  }
+}

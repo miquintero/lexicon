@@ -29,9 +29,9 @@ const APIRequests = {
     .catch(error => console.log(error))
   },
 
-  semanticallySimilarWords (word) {
+  semanticallySimilarWords (word, language) {
     return axios.get(
-      `${url}/lexicon/es/${word}?additionalFields=${extraFields}&apiKey=${key}&polarizeWord=${polarization}`,
+      `${url}/lexicon/${language}/${word}?additionalFields=${extraFields}&apiKey=${key}&polarizeWord=${polarization}`,
       this.getHeaders()
     )
     .then(response => {
@@ -42,9 +42,9 @@ const APIRequests = {
     .catch(error => console.log(error))
   },
 
-  wordInformation () {
+  wordInformation (word, language) {
     return axios.get(
-      `${url}/lexicon/es/ganas/info?apiKey=${key}`,
+      `${url}/lexicon/${language}/${word}/info?apiKey=${key}`,
       this.getHeaders()
     )
     .then(response => {

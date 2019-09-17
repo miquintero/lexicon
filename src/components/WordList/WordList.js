@@ -1,17 +1,25 @@
 import React from "react";
+import { Link, withRouter } from 'react-router-dom';
 import uniqueId from 'uniqid';
 
-function WordList({ words }) {
+function WordList({ words, language }) {
 
   const renderWords = words && words.map((word) => (
-    <li key={uniqueId.time()}>{word}</li>
+      <div key={uniqueId.time()}>
+        <Link 
+          style={{ textDecoration: 'none', color:'#555' }}
+          to={{ pathname: `/lexicon/${language}/${word}` }}
+        >
+          {word}
+        </Link>
+      </div>
   ));
   
   return (
-    <div>
-      <ul>{renderWords}</ul>
-    </div>
+      <div>
+        <ul>{renderWords}</ul>
+      </div>
   );
 }
 
-export default WordList;
+export default withRouter(WordList);
