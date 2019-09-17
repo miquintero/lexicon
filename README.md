@@ -11,8 +11,10 @@ Lexicon is a desktop application.
  ```bash
    git clone https://github.com/miquintero/lexicon
  ```
+
+2. Add the API key to the example.env file and remove 'example' from the file name.
    
-2.  Install the necessary dependencies by running the following in your terminal:
+3.  Install the necessary dependencies by running the following in your terminal:
 
    ```bash
     npm i
