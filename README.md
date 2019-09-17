@@ -20,7 +20,7 @@ Lexicon is a desktop application.
 
 ### To start
 
-To start the application, run from the root file:
+To start the application, run the following from the root file:
 
    ```bash
     webpack-dev-server
